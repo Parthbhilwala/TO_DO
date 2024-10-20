@@ -8,13 +8,13 @@ const App = () => {
   const [tasks, setTasks] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:5000/api/tasks')
+    axios.get('https://to-do-8rnh.onrender.com/api/tasks')
       .then(response => setTasks(response.data))
       .catch(error => console.error('Error fetching tasks:', error));
   }, []);
 
   const addTask = (task) => {
-    axios.post('http://localhost:5000/api/tasks', task)
+    axios.post('https://to-do-8rnh.onrender.com/api/tasks', task)
       .then(response => setTasks([...tasks, response.data]))
       .catch(error => console.error('Error adding task:', error));
   };
